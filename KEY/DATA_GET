@@ -1,0 +1,273 @@
+when@master:~$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 003: ID 30fa:0301  USB OPTICAL MOUSE 
+Bus 001 Device 004: ID 1a2c:2124 China Resource Semico Co., Ltd Keyboard
+Bus 001 Device 005: ID 2001:3319 D-Link Corp. DWA-131 Wireless N Nano Adapter (Rev. E1) [Realtek RTL8192EU]
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+when@master:~$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 003: ID 30fa:0301  USB OPTICAL MOUSE 
+Bus 001 Device 004: ID 1a2c:2124 China Resource Semico Co., Ltd Keyboard
+Bus 001 Device 005: ID 2001:3319 D-Link Corp. DWA-131 Wireless N Nano Adapter (Rev. E1) [Realtek RTL8192EU]
+Bus 001 Device 007: ID 1a86:7523 QinHeng Electronics CH340 serial converter
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+when@master:~$ 
+
+
+
+when@master:~$ sudo lsusb -v -d 1a86:7523
+[sudo] password for when: 
+
+Bus 001 Device 007: ID 1a86:7523 QinHeng Electronics CH340 serial converter
+Negotiated speed: Full Speed (12Mbps)
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               1.10
+  bDeviceClass          255 Vendor Specific Class
+  bDeviceSubClass         0 [unknown]
+  bDeviceProtocol         0 
+  bMaxPacketSize0         8
+  idVendor           0x1a86 QinHeng Electronics
+  idProduct          0x7523 CH340 serial converter
+  bcdDevice            2.64
+  iManufacturer           0 
+  iProduct                2 USB Serial
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0027
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower               98mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           3
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass      1 [unknown]
+      bInterfaceProtocol      2 
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0020  1x 32 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0020  1x 32 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0008  1x 8 bytes
+        bInterval               1
+Device Status:     0x0000
+  (Bus Powered)
+when@master:~$ 
+
+
+
+when@master:~$ sudo lsusb -vv -d 1a86:7523
+
+Bus 001 Device 007: ID 1a86:7523 QinHeng Electronics CH340 serial converter
+Negotiated speed: Full Speed (12Mbps)
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               1.10
+  bDeviceClass          255 Vendor Specific Class
+  bDeviceSubClass         0 [unknown]
+  bDeviceProtocol         0 
+  bMaxPacketSize0         8
+  idVendor           0x1a86 QinHeng Electronics
+  idProduct          0x7523 CH340 serial converter
+  bcdDevice            2.64
+  iManufacturer           0 
+  iProduct                2 USB Serial
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0027
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower               98mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           3
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass      1 [unknown]
+      bInterfaceProtocol      2 
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0020  1x 32 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0020  1x 32 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0008  1x 8 bytes
+        bInterval               1
+can't get debug descriptor: Resource temporarily unavailable
+Device Status:     0x0000
+  (Bus Powered)
+when@master:~$ 
+
+
+
+ LEN=615 
+[ 4705.504652] usb 1-1.6: new full-speed USB device number 7 using ehci-pci
+[ 4705.602163] usb 1-1.6: New USB device found, idVendor=1a86, idProduct=7523, bcdDevice= 2.64
+[ 4705.602173] usb 1-1.6: New USB device strings: Mfr=0, Product=2, SerialNumber=0
+[ 4705.602176] usb 1-1.6: Product: USB Serial
+[ 4705.602624] ch341 1-1.6:1.0: ch341-uart converter detected
+[ 4705.603704] usb 1-1.6: ch341-uart converter now attached to ttyUSB0
+[ 4705.702343] [UFW BLOCK] IN=wlxa42a95464638 OUT= MAC= SRC=10.139.150.39 DST=239.255.255.250 LEN=635 TOS=0x00 PREC=0x00 TTL=1 ID=56243 DF PROTO=UDP SPT=58182 DPT=3702 LEN=615 
+[ 4705.702498] [UFW BLOCK] IN=wlxa42a95464638 OUT= MAC= SRC=fe80:0000:0000:0000:94fd:17f0:40b7:23d2 DST=ff02:0000:0000:0000:0000:0000:0000:000c LEN=655 TC=0 HOPLIMIT=1 FLOWLBL=278576 PROTO=UDP SPT=40940 DPT=3702 LEN=615 
+[ 4876.058288] usb 1-1.6: USB disconnect, device number 7
+[ 4876.058511] ch341-uart ttyUSB0: ch341-uart converter now disconnected from ttyUSB0
+[ 4876.058544] ch341 1-1.6:1.0: device disconnected
+[ 4876.312774] [UFW BLOCK] IN=wlxa42a95464638 OUT= MAC= SRC=10.139.150.39 DST=239.255.255.250 LEN=635 TOS=0x00 PREC=0x00 TTL=1 ID=12571 DF PROTO=UDP SPT=60197 DPT=3702 LEN=615 
+[ 4876.312883] [UFW BLOCK] IN=wlxa42a95464638 OUT= MAC= SRC=fe80:0000:0000:0000:94fd:17f0:40b7:23d2 DST=ff02:0000:0000:0000:0000:0000:0000:000c LEN=655 TC=0 HOPLIMIT=1 FLOWLBL=726435 PROTO=UDP SPT=46527 DPT=3702 LEN=615 
+[ 4879.844661] usb 1-1.6: new full-speed USB device number 8 using ehci-pci
+[ 4879.942139] usb 1-1.6: New USB device found, idVendor=1a86, idProduct=7523, bcdDevice= 2.64
+[ 4879.942150] usb 1-1.6: New USB device strings: Mfr=0, Product=2, SerialNumber=0
+[ 4879.942153] usb 1-1.6: Product: USB Serial
+[ 4879.942603] ch341 1-1.6:1.0: ch341-uart converter detected
+[ 4879.943573] usb 1-1.6: ch341-uart converter now attached to ttyUSB0
+[ 4880.052382] [UFW BLOCK] IN=wlxa42a95464638 OUT= MAC= SRC=10.139.150.39 DST=239.255.255.250 LEN=635 TOS=0x00 PREC=0x00 TTL=1 ID=13393 DF PROTO=UDP SPT=36400 DPT=3702 LEN=615 
+[ 4880.052466] [UFW BLOCK] IN=wlxa42a95464638 OUT= MAC= SRC=fe80:0000:0000:0000:94fd:17f0:40b7:23d2 DST=ff02:0000:0000:0000:0000:0000:0000:000c LEN=655 TC=0 HOPLIMIT=1 FLOWLBL=919225 PROTO=UDP SPT=44807 DPT=3702 LEN=615 
+[ 4898.330144] usb 1-1.6: USB disconnect, device number 8
+[ 4898.330373] ch341-uart ttyUSB0: ch341-uart converter now disconnected from ttyUSB0
+[ 4898.330419] ch341 1-1.6:1.0: device disconnected
+[ 4898.423118] [UFW BLOCK] IN=wlxa42a95464638 OUT= MAC= SRC=10.139.150.39 DST=239.255.255.250 LEN=635 TOS=0x00 PREC=0x00 TTL=1 ID=16442 DF PROTO=UDP SPT=54045 DPT=3702 LEN=615 
+[ 4898.423243] [UFW BLOCK] IN=wlxa42a95464638 OUT= MAC= SRC=fe80:0000:0000:0000:94fd:17f0:40b7:23d2 DST=ff02:0000:0000:0000:0000:0000:0000:000c LEN=655 TC=0 HOPLIMIT=1 FLOWLBL=390231 PROTO=UDP SPT=49911 DPT=3702 LEN=615 
+
+
+
+when@master:~$ lsusb -t
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=ehci-pci/2p, 480M
+    |__ Port 001: Dev 002, If 0, Class=Hub, Driver=hub/6p, 480M
+        |__ Port 001: Dev 003, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+        |__ Port 002: Dev 004, If 0, Class=Human Interface Device, Driver=usbhid, 1.5M
+        |__ Port 002: Dev 004, If 1, Class=Human Interface Device, Driver=usbhid, 1.5M
+        |__ Port 005: Dev 005, If 0, Class=Vendor Specific Class, Driver=rtl8xxxu, 480M
+        |__ Port 006: Dev 009, If 0, Class=Vendor Specific Class, Driver=ch341, 12M
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=ehci-pci/2p, 480M
+    |__ Port 001: Dev 002, If 0, Class=Hub, Driver=hub/4p, 480M
+when@master:~$ 
+
+
+
+
+when@master:~$ usb-devices | grep -A 30 "Vendor=1a86"
+P:  Vendor=1a86 ProdID=7523 Rev=02.64
+S:  Product=USB Serial
+C:  #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=98mA
+I:  If#= 0 Alt= 0 #EPs= 3 Cls=ff(vend.) Sub=01 Prot=02 Driver=ch341
+E:  Ad=02(O) Atr=02(Bulk) MxPS=  32 Ivl=0ms
+E:  Ad=81(I) Atr=03(Int.) MxPS=   8 Ivl=1ms
+E:  Ad=82(I) Atr=02(Bulk) MxPS=  32 Ivl=0ms
+
+T:  Bus=02 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=480  MxCh= 2
+D:  Ver= 2.00 Cls=09(hub  ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=1d6b ProdID=0002 Rev=06.12
+S:  Manufacturer=Linux 6.12.90+deb13.1-amd64 ehci_hcd
+S:  Product=EHCI Host Controller
+S:  SerialNumber=0000:00:1a.0
+C:  #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=0mA
+I:  If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#=  2 Spd=480  MxCh= 4
+D:  Ver= 2.00 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=8087 ProdID=0024 Rev=00.00
+C:  #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=0mA
+I:  If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   1 Ivl=256ms
+when@master:~$ 
+
+
+
+when@master:~$ modinfo ch341
+filename:       /lib/modules/6.12.90+deb13.1-amd64/kernel/drivers/usb/serial/ch341.ko.xz
+license:        GPL v2
+description:    Winchiphead CH341 USB Serial driver
+alias:          usb:v9986p7523d*dc*dsc*dp*ic*isc*ip*in*
+alias:          usb:v4348p5523d*dc*dsc*dp*ic*isc*ip*in*
+alias:          usb:v2184p0057d*dc*dsc*dp*ic*isc*ip*in*
+alias:          usb:v1A86p7523d*dc*dsc*dp*ic*isc*ip*in*
+alias:          usb:v1A86p7522d*dc*dsc*dp*ic*isc*ip*in*
+alias:          usb:v1A86p5523d*dc*dsc*dp*ic*isc*ip*in*
+depends:        usbserial,usbcore
+intree:         Y
+name:           ch341
+retpoline:      Y
+vermagic:       6.12.90+deb13.1-amd64 SMP preempt mod_unload modversions 
+sig_id:         PKCS#7
+signer:         Build time autogenerated kernel key
+sig_key:        62:07:1B:E6:AE:A5:B6:D0:7F:B4:83:D5:77:D5:3A:CD:C8:EA:57:6B
+sig_hashalgo:   sha256
+signature:      30:64:02:30:25:F1:93:28:53:EE:AF:5A:53:57:39:88:FE:A9:6F:11:
+		85:46:5E:CA:C7:6B:AB:2B:67:A6:FB:F5:36:8A:BC:86:8B:27:01:C4:
+		E5:31:13:46:86:7E:EA:D2:4C:5D:24:61:02:30:2A:A4:97:EC:44:6D:
+		CC:0C:F6:55:AD:DA:A0:B6:8E:DD:0B:9D:58:1F:69:30:1E:F6:65:B8:
+		B1:07:4E:93:10:BF:68:05:A2:FA:22:A7:E8:AA:A1:A2:95:BB:B9:84:
+		17:0A
+when@master:~$ 
